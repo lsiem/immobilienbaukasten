@@ -24,9 +24,19 @@ public class LoginView extends LoginOverlay implements BeforeEnterObserver {
 
         LoginI18n i18n = LoginI18n.createDefault();
         i18n.setHeader(new LoginI18n.Header());
-        i18n.getHeader().setTitle("Immobilienbaukasten");
-        i18n.getHeader().setDescription("Login using user/user or admin/admin");
-        i18n.setAdditionalInformation(null);
+        i18n.getHeader().setTitle("Anmelden");
+        i18n.getHeader().setDescription("Bitte melden Sie sich an");
+        i18n.setAdditionalInformation("Einloggen mit user/user oder admin/admin");
+        i18n.setForm(new LoginI18n.Form());
+        i18n.getForm().setUsername("Benutzer");
+        i18n.getForm().setTitle("Anmelden");
+        i18n.getForm().setSubmit("Anmelden");
+        i18n.getForm().setPassword("Passwort");
+        i18n.setErrorMessage(new LoginI18n.ErrorMessage());
+        i18n.getErrorMessage().setTitle("Benutzername/Passwort ungültig");
+        i18n.getErrorMessage().setMessage("Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.");
+
+
         setI18n(i18n);
 
         setForgotPasswordButtonVisible(false);

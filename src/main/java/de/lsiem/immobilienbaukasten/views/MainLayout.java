@@ -22,8 +22,11 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import de.lsiem.immobilienbaukasten.data.entity.User;
 import de.lsiem.immobilienbaukasten.security.AuthenticatedUser;
 import de.lsiem.immobilienbaukasten.views.immobilienbaukasten.ImmobilienbaukastenView;
+
 import java.io.ByteArrayInputStream;
 import java.util.Optional;
+
+import de.lsiem.immobilienbaukasten.views.immobilienbaukasten.PreviewView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
@@ -71,6 +74,12 @@ public class MainLayout extends AppLayout {
         if (accessChecker.hasAccess(ImmobilienbaukastenView.class)) {
             nav.addItem(new SideNavItem("Immobilienbaukasten", ImmobilienbaukastenView.class,
                     LineAwesomeIcon.WAREHOUSE_SOLID.create()));
+
+        }
+
+        if (accessChecker.hasAccess(PreviewView.class)) {
+            nav.addItem(new SideNavItem("Vorschau", PreviewView.class,
+                    LineAwesomeIcon.EYE_SOLID.create()));
 
         }
 
